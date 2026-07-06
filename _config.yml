@@ -1,8 +1,8 @@
 title: "Notes philosophiques"
 description: "Essais et notes de lecture en philosophie"
 author: "Ton nom"
-url: "" # ex: https://tonpseudo.github.io
-baseurl: "" # ex: /philo-blog (laisser vide si domaine racine)
+url: "https://goniaux.github.io"
+baseurl: "/philo-blog"
 
 # Construction du site
 markdown: kramdown
