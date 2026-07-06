@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<article>
+  <header class="post-header">
+    <p class="post-meta">{{ page.date | date: "%d %B %Y" }}</p>
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if page.tags and page.tags.size > 0 %}
+  <footer class="post-footer">
+    <ul class="tag-list">
+      {% for tag in page.tags %}
+      <li><a class="tag-pill" href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+  </footer>
+  {% endif %}
+</article>

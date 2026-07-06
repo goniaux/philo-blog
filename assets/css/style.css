@@ -1,0 +1,272 @@
+/* ==========================================================================
+   Notes philosophiques — feuille de style
+   Palette : crème papier / encre / sauge
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --cream: #F8F4EA;
+  --white: #FEFDFB;
+  --ink: #2B2620;
+  --ink-soft: #55503F;
+  --sage: #7C8B6F;
+  --sage-dark: #5A6650;
+  --hairline: #DAD3C0;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Newsreader", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --measure: 68ch;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--sage-dark);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--ink); }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--sage-dark);
+  outline-offset: 3px;
+}
+
+/* ---------- Structure générale ---------- */
+
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--hairline);
+  padding: 48px 0 28px;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.site-title a { color: var(--ink); text-decoration: none; }
+
+.site-tagline {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 10px 0 0;
+}
+
+.site-nav {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.site-nav a { text-decoration: none; color: var(--ink-soft); }
+.site-nav a:hover { color: var(--sage-dark); }
+
+main { padding: 44px 0 80px; }
+
+/* ---------- Liste des articles (accueil) ---------- */
+
+.post-list { list-style: none; margin: 0; padding: 0; }
+
+.post-item {
+  border-bottom: 1px solid var(--hairline);
+  padding: 32px 0;
+}
+.post-item:first-child { padding-top: 0; }
+
+.post-item-date {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--sage-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.post-item-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 500;
+  margin: 8px 0 10px;
+  line-height: 1.25;
+}
+.post-item-title a { color: var(--ink); text-decoration: none; }
+.post-item-title a:hover { color: var(--sage-dark); }
+
+.post-item-excerpt {
+  color: var(--ink-soft);
+  font-size: 17px;
+  margin: 0 0 14px;
+}
+
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.tag-pill {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--sage-dark);
+  background: rgba(124, 139, 111, 0.12);
+  border: 1px solid rgba(124, 139, 111, 0.35);
+  border-radius: 3px;
+  padding: 3px 9px;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+.tag-pill:hover { background: rgba(124, 139, 111, 0.22); color: var(--ink); }
+
+/* ---------- Article individuel ---------- */
+
+.post-header { margin-bottom: 40px; }
+
+.post-title {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 14px 0 16px;
+}
+
+.post-meta {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--sage-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.post-content { max-width: var(--measure); }
+
+.post-content p { margin: 0 0 22px; }
+
+.post-content h2 {
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 600;
+  margin: 44px 0 18px;
+}
+.post-content h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 34px 0 14px;
+}
+
+/* Signature du site : la citation en marge, comme une glose
+   dans un traité imprimé — annotation qui accompagne le texte
+   sans l'interrompre. */
+.post-content blockquote {
+  margin: 34px 0 34px -1px;
+  padding: 4px 0 4px 22px;
+  border-left: 3px solid var(--sage);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.post-content ul, .post-content ol { margin: 0 0 22px; padding-left: 24px; }
+.post-content li { margin-bottom: 8px; }
+
+.post-content code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: rgba(124, 139, 111, 0.12);
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.post-content hr {
+  border: none;
+  border-top: 1px solid var(--hairline);
+  margin: 44px 0;
+}
+
+.post-footer {
+  margin-top: 50px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hairline);
+}
+
+/* ---------- Page tags ---------- */
+
+.tags-index-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-group { margin-bottom: 40px; }
+.tag-group-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+/* ---------- Pied de page ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--hairline);
+  padding: 28px 0 60px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+  .site-title { font-size: 25px; }
+  .post-title { font-size: 30px; }
+  .post-item-title { font-size: 22px; }
+  .site-header { padding: 32px 0 22px; }
+  main { padding: 32px 0 60px; }
+}
+
+/* ---------- Réduction de mouvement ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

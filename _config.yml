@@ -1,0 +1,24 @@
+title: "Notes philosophiques"
+description: "Essais et notes de lecture en philosophie"
+author: "Ton nom"
+url: "" # ex: https://tonpseudo.github.io
+baseurl: "" # ex: /philo-blog (laisser vide si domaine racine)
+
+# Construction du site
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+paginate: 10
+paginate_path: "/page:num/"
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclure du build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
